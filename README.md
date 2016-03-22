@@ -3,7 +3,7 @@
 
 ## What is it?
 
-A couple of (vagrants)[http://vagrantup.com/] for testing the oss-cassandra-helpers library.
+A couple of [vagrants](http://vagrantup.com/) for testing the oss-cassandra-helpers library.
 
 - apache-cassandra - A vagrant to run apache cassandra 2.x
 
