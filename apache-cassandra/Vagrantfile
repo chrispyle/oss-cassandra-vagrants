@@ -1,0 +1,20 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+  # Every Vagrant development environment requires a box. You can search for
+  # boxes at https://atlas.hashicorp.com/search.
+  config.vm.box = "ubuntu/trusty64"
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = 4096
+  end
+  
+  config.vm.provision "shell", path: "provision-emacs.sh", name: "emacs"
+  config.vm.provision "shell", path: "provision-java8.sh", name: "java8"
+  config.vm.provision "shell", path: "provision-jna.sh", name: "jna"
+  config.vm.provision "shell", path: "provision-cassandra.sh", name: "cassandra"
+
+  config.vm.network "private_network", ip: "10.1.1.3"
+  config.hostsupdater.aliases = ["cassandra"]  
+end
